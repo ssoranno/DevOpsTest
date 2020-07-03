@@ -23,7 +23,7 @@ stages:
         ResourceGroupName: 'juiceShopTesting'
         SubscriptionId: 'a94e209d-614b-4e3f-8a8f-56b3b44a2d62'
         EnableOMSLogging: false
-    - task: PowerShell@2
-      displayName: ls
-      inputs: 
-        script: 'ls'
+    #- task: PowerShell@2
+    #  displayName: ls
+    #  inputs: 
+    #    script: 'ls'
