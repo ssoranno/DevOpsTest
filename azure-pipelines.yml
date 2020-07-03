@@ -23,4 +23,4 @@ stages:
         ResourceGroupName: 'juiceShopTesting'
         SubscriptionId: 'a94e209d-614b-4e3f-8a8f-56b3b44a2d62'
         EnableOMSLogging: false
-    - powershell: 'cd \Users\VssAdministrator\AppData\Local\Microsoft\AzSKLogs\Sub_Azure subscription 1; dir'
+    - powershell: 'pwd; cd \Users\VssAdministrator\AppData\Local\Microsoft\AzSKLogs\Sub_Azure subscription 1'
