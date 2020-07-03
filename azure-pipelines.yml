@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Test
+    displayName: Test Azure
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - task: AzSKSVTs@4
+      displayName: Run AzSK SVTs
+      inputs:
+        ConnectedServiceNameARM: 'Azure subscription 1 (a94e209d-614b-4e3f-8a8f-56b3b44a2d62)'
+        GenerateMethodParameterSetSelection: 'ResourceGroupName'
+        ResourceGroupName: 'juiceShopTesting'
+        SubscriptionId: 'a94e209d-614b-4e3f-8a8f-56b3b44a2d62'
+        EnableOMSLogging: false
+    - task: PowerShell@2
+    displayName: ls
+    inputs: 
+      script: 'ls'
