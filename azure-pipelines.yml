@@ -15,6 +15,7 @@ stages:
     pool:
       vmImage: 'windows-latest'
     steps:
+    - task: WhiteSource Bolt@20
     - task: AzSKSVTs@4
       displayName: Run AzSK SVTs
       inputs:
